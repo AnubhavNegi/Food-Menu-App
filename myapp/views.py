@@ -5,8 +5,14 @@ from .models import Item
 # Create your views here.
 
 def index(request):
+    # Getting items from the database
     item_list = Item.objects.all()
-    return render(request, "myapp\\index.html")
+    # Creating context
+    context = {
+        'item_list' : item_list
+    }
+    # Passing the context object to the render method along with the template
+    return render(request, "myapp\\index.html", context)
 
 def item(request):
     return HttpResponse("This is an item view")
