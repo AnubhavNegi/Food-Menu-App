@@ -14,5 +14,12 @@ def index(request):
     # Passing the context object to the render method along with the template
     return render(request, "myapp\\index.html", context)
 
+def detail(request, id):
+    item = Item.objects.get(id = id)
+    context = {
+        'item' : item
+    }
+    return render(request, 'myapp\\detail.html', context)
+
 def item(request):
     return HttpResponse("This is an item view")
