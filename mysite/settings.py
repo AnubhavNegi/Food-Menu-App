@@ -129,3 +129,5 @@ MAILERS = {
 }
 
 LOGIN_REDIRECT_URL = 'myapp:index'
+
+LOGIN_URL = 'login'
